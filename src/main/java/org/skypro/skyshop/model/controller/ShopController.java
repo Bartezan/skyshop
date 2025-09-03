@@ -26,8 +26,9 @@ public class ShopController {
     }
 
     private final SearchService searchService = new SearchService(storageService);
-    @GetMapping ("/search")
-    public Collection<SearchResult> search (@RequestParam String pattern){
+
+    @GetMapping("/search")
+    public Collection<SearchResult> search(@RequestParam String pattern) {
         return searchService.search(pattern);
     }
 

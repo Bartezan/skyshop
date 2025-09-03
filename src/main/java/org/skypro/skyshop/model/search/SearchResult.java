@@ -13,7 +13,7 @@ public class SearchResult {
         this.contentType = contentType;
     }
 
-    public static SearchResult fromSearchable (Searchable target){
-        return new SearchResult(target.getId(),target.getStringRepresentation(),target.getContentName());
+    public static SearchResult fromSearchable(Searchable target) {
+        return new SearchResult(target.getId(), target.getStringRepresentation(), target.getContentName());
     }
 }

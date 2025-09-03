@@ -22,7 +22,7 @@ public class StorageService {
 
     public Collection<Product> GetAllProduct() {
         Set<Product> result = new HashSet<>();
-        for (Map.Entry<UUID,Product> entery : mapProduct.entrySet()){
+        for (Map.Entry<UUID, Product> entery : mapProduct.entrySet()) {
             result.add(entery.getValue());
         }
         return result;
@@ -30,18 +30,18 @@ public class StorageService {
 
     public Collection<Article> GetAllArticle() {
         Set<Article> result = new HashSet<>();
-        for (Map.Entry<UUID,Article> entery : mapArticle.entrySet()){
+        for (Map.Entry<UUID, Article> entery : mapArticle.entrySet()) {
             result.add(entery.getValue());
         }
         return result;
     }
 
-    public Collection<Searchable> GetAllSearchable(){
+    public Collection<Searchable> GetAllSearchable() {
         Set<Searchable> result = new HashSet<>();
-        for (Map.Entry<UUID,Product> entery : mapProduct.entrySet()){
+        for (Map.Entry<UUID, Product> entery : mapProduct.entrySet()) {
             result.add(entery.getValue());
         }
-        for (Map.Entry<UUID,Article> entery : mapArticle.entrySet()){
+        for (Map.Entry<UUID, Article> entery : mapArticle.entrySet()) {
             result.add(entery.getValue());
         }
         return result;
