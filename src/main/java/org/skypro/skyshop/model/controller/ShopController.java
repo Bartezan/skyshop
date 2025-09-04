@@ -17,12 +17,12 @@ public class ShopController {
 
     @GetMapping("/product")
     public Collection<Product> getAllProduct() {
-        return storageService.GetAllProduct();
+        return storageService.getAllProduct();
     }
 
     @GetMapping("/articles")
     public Collection<Article> getAllArticle() {
-        return storageService.GetAllArticle();
+        return storageService.getAllArticle();
     }
 
     private final SearchService searchService = new SearchService(storageService);
