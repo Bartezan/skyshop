@@ -16,38 +16,38 @@ public class StorageService {
     private final Map<UUID, Article> mapArticle;
 
     public StorageService() {
-        this.mapProduct = FillMapProduct();
-        this.mapArticle = FillMapArticle();
+        this.mapProduct = fillMapProduct();
+        this.mapArticle = fillMapArticle();
     }
 
-    public Collection<Product> GetAllProduct() {
+    public Collection<Product> getAllProduct() {
         Set<Product> result = new HashSet<>();
-        for (Map.Entry<UUID,Product> entery : mapProduct.entrySet()){
+        for (Map.Entry<UUID, Product> entery : mapProduct.entrySet()) {
             result.add(entery.getValue());
         }
         return result;
     }
 
-    public Collection<Article> GetAllArticle() {
+    public Collection<Article> getAllArticle() {
         Set<Article> result = new HashSet<>();
-        for (Map.Entry<UUID,Article> entery : mapArticle.entrySet()){
+        for (Map.Entry<UUID, Article> entery : mapArticle.entrySet()) {
             result.add(entery.getValue());
         }
         return result;
     }
 
-    public Collection<Searchable> GetAllSearchable(){
+    public Collection<Searchable> getAllSearchable() {
         Set<Searchable> result = new HashSet<>();
-        for (Map.Entry<UUID,Product> entery : mapProduct.entrySet()){
+        for (Map.Entry<UUID, Product> entery : mapProduct.entrySet()) {
             result.add(entery.getValue());
         }
-        for (Map.Entry<UUID,Article> entery : mapArticle.entrySet()){
+        for (Map.Entry<UUID, Article> entery : mapArticle.entrySet()) {
             result.add(entery.getValue());
         }
         return result;
     }
 
-    private Map<UUID, Product> FillMapProduct() {
+    private Map<UUID, Product> fillMapProduct() {
         SimpleProduct apple = new SimpleProduct("Яблоко", 12, UUID.randomUUID());
         DiscountedProduct banana = new DiscountedProduct("Банан", 10, 50, UUID.randomUUID());
         FixPriceProduct kiwi = new FixPriceProduct("Киви", UUID.randomUUID());
@@ -58,7 +58,7 @@ public class StorageService {
         return fillMap;
     }
 
-    private Map<UUID, Article> FillMapArticle() {
+    private Map<UUID, Article> fillMapArticle() {
         Article appleArticle = new Article("Яблоко сорт Антоновка", "О вкусовых качествах данного сорта", UUID.randomUUID());
         Map<UUID, Article> fillMap = new HashMap<>();
         fillMap.put(appleArticle.getId(), appleArticle);

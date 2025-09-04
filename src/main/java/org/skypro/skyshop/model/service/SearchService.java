@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class SearchService {
@@ -16,7 +15,7 @@ public class SearchService {
     }
 
     public Collection<SearchResult> search(String target) {
-        List<SearchResult> results = storageService.GetAllSearchable().stream()
+        List<SearchResult> results = storageService.getAllSearchable().stream()
                 .filter(s -> s.searchTerm().contains(target))
                 .map(SearchResult::fromSearchable)
                 .toList();
