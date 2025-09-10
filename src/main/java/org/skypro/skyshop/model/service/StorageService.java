@@ -64,4 +64,8 @@ public class StorageService {
         fillMap.put(appleArticle.getId(), appleArticle);
         return fillMap;
     }
+
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(mapProduct.get(id));
+    }
 }
