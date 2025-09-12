@@ -34,13 +34,6 @@ public class BasketService {
                         m.getValue()))
                 .collect(Collectors.toCollection(ArrayList::new));
         UserBasket tempUserBasket = new UserBasket(tempBasketItemList);
-//        System.out.println(tempUserBasket.getTotal());
-//        System.out.println(tempUserBasket.getItemsList().get(0).getProduct().getName());
-//        System.out.println(tempUserBasket.getItemsList().get(0).getCount());
-//        System.out.println(tempUserBasket.getItemsList().get(1).getProduct().getName());
-//        System.out.println(tempUserBasket.getItemsList().get(1).getCount());
-//        System.out.println(tempUserBasket.getItemsList().get(2).getProduct().getName());
-//        System.out.println(tempUserBasket.getItemsList().get(2).getCount());
         return tempUserBasket;
     }
 }
