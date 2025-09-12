@@ -15,9 +15,8 @@ public class BasketService {
 
     private final ProductBasket productBasket;
     private final StorageService storageService;
-
-    public BasketService(StorageService storageService) {
-        this.productBasket = new ProductBasket();
+    public BasketService(StorageService storageService, ProductBasket productBasket) {
+        this.productBasket = productBasket;
         this.storageService = storageService;
     }
 
@@ -34,6 +33,14 @@ public class BasketService {
                 .map(m -> new BasketItem(storageService.getProductById(m.getKey()).orElseThrow(() -> new IllegalArgumentException("Продукта с данным ID не существует: " + m.getKey())),
                         m.getValue()))
                 .collect(Collectors.toCollection(ArrayList::new));
-        return new UserBasket(tempBasketItemList);
+        UserBasket tempUserBasket = new UserBasket(tempBasketItemList);
+//        System.out.println(tempUserBasket.getTotal());
+//        System.out.println(tempUserBasket.getItemsList().get(0).getProduct().getName());
+//        System.out.println(tempUserBasket.getItemsList().get(0).getCount());
+//        System.out.println(tempUserBasket.getItemsList().get(1).getProduct().getName());
+//        System.out.println(tempUserBasket.getItemsList().get(1).getCount());
+//        System.out.println(tempUserBasket.getItemsList().get(2).getProduct().getName());
+//        System.out.println(tempUserBasket.getItemsList().get(2).getCount());
+        return tempUserBasket;
     }
 }

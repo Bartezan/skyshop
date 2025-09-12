@@ -12,4 +12,12 @@ public final class UserBasket {
                 .mapToInt(BasketItem -> BasketItem.getProduct().getPrice() * BasketItem.getCount())
                 .sum();
     }
+
+    public List<BasketItem> getItemsList() {
+        return itemsList;
+    }
+
+    public int getTotal() {
+        return total;
+    }
 }

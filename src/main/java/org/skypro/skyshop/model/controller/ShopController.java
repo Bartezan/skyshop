@@ -1,12 +1,14 @@
 package org.skypro.skyshop.model.controller;
 
 import org.skypro.skyshop.model.article.Article;
+import org.skypro.skyshop.model.basket.ProductBasket;
 import org.skypro.skyshop.model.basket.UserBasket;
 import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.model.search.SearchResult;
 import org.skypro.skyshop.model.service.BasketService;
 import org.skypro.skyshop.model.service.SearchService;
 import org.skypro.skyshop.model.service.StorageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,8 +19,12 @@ import java.util.UUID;
 
 @RestController
 public class ShopController {
-    private final StorageService storageService = new StorageService();
-    private final BasketService basketService = new BasketService(storageService);
+    @Autowired
+    private StorageService storageService;
+    @Autowired
+    private  ProductBasket productBasket ;
+    @Autowired
+    private BasketService basketService;
 
     @GetMapping("/product")
     public Collection<Product> getAllProduct() {
