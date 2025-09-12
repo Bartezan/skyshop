@@ -22,7 +22,7 @@ public class ShopController {
     @Autowired
     private StorageService storageService;
     @Autowired
-    private  ProductBasket productBasket ;
+    private ProductBasket productBasket;
     @Autowired
     private BasketService basketService;
 
