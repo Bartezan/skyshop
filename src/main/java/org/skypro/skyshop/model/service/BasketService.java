@@ -1,6 +1,6 @@
 package org.skypro.skyshop.model.service;
 
-import org.skypro.skyshop.model.Exceptions.NoSuchProductException;
+import org.skypro.skyshop.model.exceptions.NoSuchProductException;
 import org.skypro.skyshop.model.basket.BasketItem;
 import org.skypro.skyshop.model.basket.ProductBasket;
 import org.skypro.skyshop.model.basket.UserBasket;

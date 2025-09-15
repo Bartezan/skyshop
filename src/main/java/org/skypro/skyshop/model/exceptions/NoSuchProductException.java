@@ -1,4 +1,4 @@
-package org.skypro.skyshop.model.Exceptions;
+package org.skypro.skyshop.model.exceptions;
 
 import java.util.UUID;
 
