@@ -66,16 +66,17 @@ public class BasketServiceTest {
     }
 
     @Test
-    public void givenEmptyProductBasket_whenGetUserBasket_ThenEmptyUserBasket(){
+    public void givenEmptyProductBasket_whenGetUserBasket_ThenEmptyUserBasket() {
         UserBasket result = basketService.getUserBasket();
         assertTrue(result.getItemsList().isEmpty());
     }
+
     @Test
-    public void givenFillProductBasket_whenGetUserBasket_ThenGetUserBasket(){
+    public void givenFillProductBasket_whenGetUserBasket_ThenGetUserBasket() {
         UUID id = UUID.randomUUID();
         Mockito.when(storageService.getProductById(id)).thenReturn(Optional.of(new SimpleProduct("Яблоко", 12, id)));
-        Map<UUID,Integer> testMap = new HashMap<>();
-        testMap.put(id,1);
+        Map<UUID, Integer> testMap = new HashMap<>();
+        testMap.put(id, 1);
         Mockito.when(productBasket.returnBasket()).thenReturn(testMap);
 
         UserBasket result = basketService.getUserBasket();

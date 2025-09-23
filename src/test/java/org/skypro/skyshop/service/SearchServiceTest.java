@@ -42,6 +42,7 @@ public class SearchServiceTest {
 
         assertTrue(results.isEmpty());
     }
+
     @Test
     public void givenFillStorageService_whenCheckSearchServiceWithCorrectTarget_ThenReturnResult() {
         Mockito.when(storageService.getAllSearchable()).thenReturn(StorageServiceFixture.getFillStorageService());

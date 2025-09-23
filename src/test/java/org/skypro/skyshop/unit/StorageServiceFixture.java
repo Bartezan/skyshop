@@ -24,7 +24,7 @@ public class StorageServiceFixture {
         return result;
     }
 
-    public static Collection<Searchable> getFillStorageService(){
+    public static Collection<Searchable> getFillStorageService() {
         SimpleProduct apple = new SimpleProduct("Яблоко", 12, UUID.randomUUID());
         DiscountedProduct banana = new DiscountedProduct("Банан", 10, 50, UUID.randomUUID());
         FixPriceProduct kiwi = new FixPriceProduct("Киви", UUID.randomUUID());
